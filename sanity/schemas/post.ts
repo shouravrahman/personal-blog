@@ -3,7 +3,7 @@ import { Rule } from "sanity";
 export const post = {
 
     name: "post",
-    title: "post",
+    title: "Post",
     type: "document",
     fields: [
         {
@@ -15,11 +15,9 @@ export const post = {
         {
             name: 'slug',
             title: 'Slug',
-            type: 'string',
+            type: 'slug',
             options: {
-
                 source: "title"
-
             },
             validation: (Rule: Rule) => Rule.required().error("Required")
         },
@@ -58,7 +56,7 @@ export const post = {
             name: 'tags',
             title: 'Tags',
             type: "array",
-            of: [{ type: 'reference', to: [{ type: 'tag' }] }]
+            of: [{ type: "reference", to: [{ type: "tag" }] }]
         }
     ]
 
